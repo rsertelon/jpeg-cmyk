@@ -29,7 +29,14 @@ Add the dependency to your project:
 This will add support for reading CMYK JPEG with Java ImageIO. However, as there are now two JPEG readers you have to read images like so:
 
 ```java
+// Read an image from a File
+BufferedImage imgFromFile = CMYKReader.read(File imageFile); // throws FileNotFoundException, IOException
 
+// Read an image from an ImageInputStream
+BufferedImage imgFromImageInputStream = CMYKReader.read(ImageInputStream iis);
+
+// Read an image from an InputStream
+BufferedImage imgFromInputStream = CMYKReader.read(InputStream is); // throws IOException
 ```
 
 ## Licence

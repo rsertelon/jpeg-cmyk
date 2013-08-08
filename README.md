@@ -1,4 +1,39 @@
-jpeg-cmyk
-=========
+## JPEG CMYK
 
-JPEG CMYK Support for Java
+This project adds support for JPEG CMYK on the Java platform.
+
+Originally, it was written by Werner Randelshofer. As he decided to license his work under the Creative Commons By 3.0, I wanted to create a Maven artifact for users of this library, and even enhance it a bit.
+
+## Usage
+
+Add the dependency to your project:
+
+```xml
+<!-- Repository -->
+<repositories>
+    <repository>
+        <id>bluepyth</id>
+        <name>BluePyth Repository</name>
+        <url>http://repository.bluepyth.fr/content/groups/public</url>
+    </repository>
+</repositories>
+
+<!-- Dependency -->
+<dependency>
+    <groupId>ch.randelshofer.media</groupId>
+    <artifactId>jpeg-cmyk</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+This will add support for reading CMYK JPEG with Java ImageIO. However, as there are now two JPEG readers you have to read images like so:
+
+```java
+
+```
+
+## Licence
+
+Copyright Werner Randelshofer 2013
+
+This software is licenced under the Creative Commons By 3.0, you can find more information in the `LICENSE.md` file.

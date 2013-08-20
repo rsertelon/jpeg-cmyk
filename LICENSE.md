@@ -1,12 +1,13 @@
-License Terms
+## License Terms
 
 You can license JPEG CMYK under the terms of the Creative Commons Attribution 3.0 license.
-You are free:
+
+*You are free:*
 
     to Share — to copy, distribute and transmit the work
     to Remix — to adapt the work
 
-Under the following conditions:
+*Under the following conditions:*
 
     Attribution. You must keep an attribution to the author, Werner Randelshofer, in the source files (but not in any way that suggests that they endorse you or your use of the work).
 
@@ -23,3 +24,7 @@ Werner Randelshofer, Hausmatt 10, Immensee, CH-6405, Switzerland
 http://www.randelshofer.ch/
 werner.randelshofer@bluewin.ch
 All Rights Reserved.
+
+## Exception to this license
+
+The class ch.randelshofer.media.IIOProviderContextListener is licensed under its own terms (see file header) and copyright belongs to Harald Kuhr.

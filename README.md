@@ -58,3 +58,5 @@ If you want to use this library inside a web application project, you should use
 Copyright Werner Randelshofer 2013
 
 This software is licenced under the Creative Commons By 3.0, you can find more information in the `LICENSE.md` file.
+
+The class ch.randelshofer.media.IIOProviderContextListener is licensed under its own terms (see file header) and copyright belongs to Harald Kuhr.

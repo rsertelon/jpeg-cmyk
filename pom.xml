@@ -43,6 +43,12 @@
 			<name>Werner Randelshofer</name>
 			<url>http://www.randelshofer.ch</url>
 		</developer>
+		<depveloper>
+			<id>kuhr</id>
+			<name>Harald Kuhr</name>
+			<email>harald.kuhr@gmail.com</email>
+			<url>https://github.com/haraldk</url>
+		</developer>
 		<developer>
 			<id>bluepyth</id>
 			<name>Romain Sertelon</name>

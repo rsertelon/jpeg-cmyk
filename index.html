@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jpeg-cmyk by BluePyth</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/BluePyth/jpeg-cmyk">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/BluePyth/jpeg-cmyk/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/BluePyth/jpeg-cmyk/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Jpeg-cmyk</h1>
+          <p>JPEG CMYK Support for Java</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/BluePyth">BluePyth</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h2>
+<a name="jpeg-cmyk" class="anchor" href="#jpeg-cmyk"><span class="octicon octicon-link"></span></a>JPEG CMYK</h2>
+
+<p>This project adds support for JPEG CMYK on the Java platform.</p>
+
+<p>Originally, it was written by Werner Randelshofer. As he decided to license his work under the Creative Commons By 3.0, I wanted to create a Maven artifact for users of this library, and even enhance it a bit.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Add the dependency to your project:</p>
+
+<div class="highlight"><pre><span class="c">&lt;!-- Repository --&gt;</span>
+<span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+        <span class="nt">&lt;id&gt;</span>bluepyth<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;name&gt;</span>BluePyth Repository<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://repository.bluepyth.fr/content/groups/public<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
+
+<span class="c">&lt;!-- Dependency --&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>ch.randelshofer.media<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>jpeg-cmyk<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+<p>This will add support for reading CMYK JPEG with Java ImageIO. However, as there are now two JPEG readers you have to read images like so:</p>
+
+<div class="highlight"><pre><span class="c1">// Read an image from a File</span>
+<span class="n">BufferedImage</span> <span class="n">imgFromFile</span> <span class="o">=</span> <span class="n">CMYKReader</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">File</span> <span class="n">imageFile</span><span class="o">);</span> <span class="c1">// throws FileNotFoundException, IOException</span>
+
+<span class="c1">// Read an image from an ImageInputStream</span>
+<span class="n">BufferedImage</span> <span class="n">imgFromImageInputStream</span> <span class="o">=</span> <span class="n">CMYKReader</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">ImageInputStream</span> <span class="n">iis</span><span class="o">);</span>
+
+<span class="c1">// Read an image from an InputStream</span>
+<span class="n">BufferedImage</span> <span class="n">imgFromInputStream</span> <span class="o">=</span> <span class="n">CMYKReader</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">is</span><span class="o">);</span> <span class="c1">// throws IOException</span>
+</pre></div>
+
+<p>If you want to use this library inside a web application project, you should use the provided ContextListener. It will ensure that the library will be loaded by the JDK.</p>
+
+<div class="highlight"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;web-app&gt;</span>
+    <span class="c">&lt;!-- ... --&gt;</span>
+    <span class="nt">&lt;listener&gt;</span>
+        <span class="nt">&lt;listener-class&gt;</span>ch.randelshofer.media.IIOProviderContextListener<span class="nt">&lt;/listener-class&gt;</span>
+    <span class="nt">&lt;/listener&gt;</span>
+    <span class="c">&lt;!-- ... --&gt;</span>
+<span class="nt">&lt;/web-app&gt;</span>
+
+</pre></div>
+
+<h2>
+<a name="licence" class="anchor" href="#licence"><span class="octicon octicon-link"></span></a>Licence</h2>
+
+<p>Copyright Werner Randelshofer 2013</p>
+
+<p>This software is licenced under the Creative Commons By 3.0, you can find more information in the <code>LICENSE.md</code> file.</p>
+
+<p>The class ch.randelshofer.media.IIOProviderContextListener is licensed under its own terms (see file header) and copyright belongs to Harald Kuhr.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>

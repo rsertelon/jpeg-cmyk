@@ -39,6 +39,20 @@ BufferedImage imgFromImageInputStream = CMYKReader.read(ImageInputStream iis);
 BufferedImage imgFromInputStream = CMYKReader.read(InputStream is); // throws IOException
 ```
 
+If you want to use this library inside a web application project, you should use the provided ContextListener. It will ensure that the library will be loaded by the JDK.
+
+```xml
+<?xml version="1.0"?>
+<web-app>
+	<!-- ... -->
+	<listener>
+		<listener-class>ch.randelshofer.media.IIOProviderContextListener</listener-class>
+	</listener>
+	<!-- ... -->
+</web-app>
+
+```
+
 ## Licence
 
 Copyright Werner Randelshofer 2013

@@ -13,14 +13,13 @@ package ch.randelshofer.media.jpeg;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
+
 import javax.imageio.ImageReader;
 import javax.imageio.spi.ImageReaderSpi;
 import javax.imageio.spi.ServiceRegistry;
 import javax.imageio.stream.ImageInputStream;
 
 import org.kohsuke.MetaInfServices;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * A reader for JPEG images in the CMYK color space.
@@ -31,8 +30,6 @@ import org.slf4j.LoggerFactory;
  */
 @MetaInfServices(ImageReaderSpi.class)
 public class CMYKJPEGImageReaderSpi extends ImageReaderSpi {
-
-	private final static Logger logger = LoggerFactory.getLogger(CMYKJPEGImageReaderSpi.class);
 	
 	public CMYKJPEGImageReaderSpi() {
 		super("Werner Randelshofer",// vendor name
@@ -54,12 +51,10 @@ public class CMYKJPEGImageReaderSpi extends ImageReaderSpi {
 				null,// extraImageMetadataFormatNames,
 				null// extraImageMetadataFormatClassNames
 		);
-		logger.info("-------- CMYK FOUND AND LOADED! ----------");
 	}
 
 	@Override
 	public boolean canDecodeInput(Object source) throws IOException {
-		logger.info("-------- CMYK FOUND AND LOADED! ----------");
 		if (source instanceof ImageInputStream) {
 			ImageInputStream in = (ImageInputStream) source;
 			in.mark();
@@ -76,19 +71,16 @@ public class CMYKJPEGImageReaderSpi extends ImageReaderSpi {
 
 	@Override
 	public ImageReader createReaderInstance(Object extension) throws IOException {
-		logger.info("-------- CMYK FOUND AND LOADED! ----------");
 		return new CMYKJPEGImageReader(this);
 	}
 
 	@Override
 	public String getDescription(Locale locale) {
-		logger.info("-------- CMYK FOUND AND LOADED! ----------");
 		return "CMYK JPEG Image Reader";
 	}
 	
 	@Override
 	public void onRegistration(ServiceRegistry registry, Class<?> category) {
-		logger.info("-------- CMYK FOUND AND LOADED! ----------");
 		super.onRegistration(registry, category);
 	}
 }

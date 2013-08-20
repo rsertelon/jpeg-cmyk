@@ -19,7 +19,6 @@ import java.awt.image.ColorModel;
 import java.awt.image.DataBuffer;
 import java.awt.image.DataBufferInt;
 import java.awt.image.DirectColorModel;
-import java.awt.image.PixelInterleavedSampleModel;
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
 import java.io.ByteArrayInputStream;
@@ -146,6 +145,7 @@ public class CMYKJPEGImageReader extends ImageReader {
 		this.isYCCKInversed = newValue;
 	}
 
+	@SuppressWarnings({ "unused", "resource" })
 	public static BufferedImage read(ImageInputStream in, boolean inverseYCCKColors) throws IOException {
 		// Seek to start of input stream
 		in.seek(0);
@@ -236,7 +236,7 @@ public class CMYKJPEGImageReader extends ImageReader {
 
 			// In case of failure, use a Generic CMYK profile
 			if (profile == null) {
-				profile = ICC_Profile.getInstance(CMYKJPEGImageReader.class.getResourceAsStream("Generic CMYK Profile.icc"));
+				profile = ICC_Profile.getInstance(CMYKJPEGImageReader.class.getResourceAsStream("/Generic_CMYK_Profile.icc"));
 			}
 			switch (app14AdobeColorTransform) {
 			case 0:
@@ -461,7 +461,6 @@ public class CMYKJPEGImageReader extends ImageReader {
 			int w = ycckRaster.getWidth(), h = ycckRaster.getHeight();
 			int[] rgb = new int[w * h];
 
-			PixelInterleavedSampleModel pix;
 			// if (Adobe_APP14 and transform==2) then YCCK else CMYK
 			int[] Y = ycckRaster.getSamples(0, 0, w, h, 0, (int[]) null);
 			int[] Cb = ycckRaster.getSamples(0, 0, w, h, 1, (int[]) null);

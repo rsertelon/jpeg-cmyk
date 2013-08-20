@@ -26,8 +26,7 @@ public final class CMYKReader {
 	public static BufferedImage read(ImageInputStream iis) {
 		BufferedImage img = null;
 		try {
-			Iterator<ImageReader> i = ImageIO.getImageReaders(iis);
-		    for(; img == null && i.hasNext(); ) {
+		    for(Iterator<ImageReader> i = ImageIO.getImageReaders(iis); img == null && i.hasNext(); ) {
 		        ImageReader r = i.next();
 		        try {
 		            r.setInput(iis);

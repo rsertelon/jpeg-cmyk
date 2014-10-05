@@ -9,7 +9,7 @@
 
 	<groupId>fr.sertelon.media</groupId>
 	<artifactId>jpeg-cmyk</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1-SNAPSHOT</version>
 
 	<name>JPEG CMYK Support for Java</name>
 	<description>A JPEG reader for Java supporting CMYK color model</description>

@@ -8,7 +8,7 @@
 		<version>9</version>
 	</parent>
 
-	<groupId>ch.randelshofer.media</groupId>
+	<groupId>fr.sertelon.media</groupId>
 	<artifactId>jpeg-cmyk</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 

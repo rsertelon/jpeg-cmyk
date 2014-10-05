@@ -8,7 +8,7 @@
  * license agreement you entered into with Werner Randelshofer.
  * For details see accompanying license terms.
  */
-package ch.randelshofer.media.io;
+package fr.sertelon.media.io;
 
 import java.io.IOException;
 import java.nio.ByteOrder;

@@ -8,7 +8,7 @@
  * license agreement you entered into with Werner Randelshofer.
  * For details see accompanying license terms.
  */
-package ch.randelshofer.media.jpeg;
+package fr.sertelon.media.jpeg;
 
 import java.awt.color.ColorSpace;
 import java.awt.color.ICC_ColorSpace;
@@ -38,10 +38,10 @@ import javax.imageio.spi.ImageReaderSpi;
 import javax.imageio.stream.ImageInputStream;
 import javax.imageio.stream.MemoryCacheImageInputStream;
 
-import ch.randelshofer.media.io.ByteArrayImageInputStream;
-import ch.randelshofer.media.io.ImageInputStreamAdapter;
-
 import com.sun.imageio.plugins.jpeg.JPEGImageReader;
+
+import fr.sertelon.media.io.ByteArrayImageInputStream;
+import fr.sertelon.media.io.ImageInputStreamAdapter;
 
 /**
  * Reads a JPEG image with colors in the CMYK color space.

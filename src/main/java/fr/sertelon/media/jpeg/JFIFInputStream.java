@@ -8,7 +8,7 @@
  * license agreement you entered into with Werner Randelshofer.
  * For details see accompanying license terms.
  */
-package ch.randelshofer.media.jpeg;
+package fr.sertelon.media.jpeg;
 
 import java.io.*;
 import java.util.*;

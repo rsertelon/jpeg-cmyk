@@ -1,4 +1,4 @@
-package ch.randelshofer.media;
+package fr.sertelon.media;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

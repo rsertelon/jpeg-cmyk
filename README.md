@@ -20,13 +20,13 @@ This will add support for reading CMYK JPEG with Java ImageIO. However, as there
 
 ```java
 // Read an image from a File
-BufferedImage imgFromFile = CMYKReader.read(File imageFile); // throws FileNotFoundException, IOException
+BufferedImage imgFromFile = CMYKReader.read(File imageFile);
 
 // Read an image from an ImageInputStream
 BufferedImage imgFromImageInputStream = CMYKReader.read(ImageInputStream iis);
 
 // Read an image from an InputStream
-BufferedImage imgFromInputStream = CMYKReader.read(InputStream is); // throws IOException
+BufferedImage imgFromInputStream = CMYKReader.read(InputStream is);
 ```
 
 If you want to use this library inside a web application project, you should use the provided ContextListener. It will ensure that the library will be loaded by the JDK.

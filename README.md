@@ -9,20 +9,10 @@ Originally, it was written by Werner Randelshofer. As he decided to license his 
 Add the dependency to your project:
 
 ```xml
-<!-- Repository -->
-<repositories>
-    <repository>
-        <id>bluepyth</id>
-        <name>BluePyth Repository</name>
-        <url>http://repository.bluepyth.fr/content/groups/public</url>
-    </repository>
-</repositories>
-
-<!-- Dependency -->
 <dependency>
-    <groupId>ch.randelshofer.media</groupId>
+    <groupId>fr.sertelon.media</groupId>
     <artifactId>jpeg-cmyk</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -46,7 +36,7 @@ If you want to use this library inside a web application project, you should use
 <web-app>
 	<!-- ... -->
 	<listener>
-		<listener-class>ch.randelshofer.media.IIOProviderContextListener</listener-class>
+		<listener-class>fr.sertelon.media.IIOProviderContextListener</listener-class>
 	</listener>
 	<!-- ... -->
 </web-app>
@@ -59,4 +49,4 @@ Copyright Werner Randelshofer 2013
 
 This software is licenced under the Creative Commons By 3.0, you can find more information in the `LICENSE.md` file.
 
-The class ch.randelshofer.media.IIOProviderContextListener is licensed under its own terms (see file header) and copyright belongs to Harald Kuhr.
+The class fr.sertelon.media.IIOProviderContextListener is licensed under its own terms (see file header) and copyright belongs to Harald Kuhr.
